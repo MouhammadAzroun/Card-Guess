@@ -1,5 +1,6 @@
 package com.example.cardguessing
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -17,7 +18,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         howToPlay.setOnClickListener(){
-
+            val intent = Intent(this, HowToPlayActivity::class.java)
+            startActivity(intent)
         }
     }
 }
