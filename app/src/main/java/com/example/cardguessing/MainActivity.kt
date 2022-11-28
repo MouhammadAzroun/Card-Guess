@@ -14,7 +14,8 @@ class MainActivity : AppCompatActivity() {
         val howToPlay = findViewById<Button>(R.id.button2)
 
         startGame.setOnClickListener(){
-
+            val intent = Intent(this, Game_Activity :: class.java)
+            startActivity(intent)
         }
 
         howToPlay.setOnClickListener(){
