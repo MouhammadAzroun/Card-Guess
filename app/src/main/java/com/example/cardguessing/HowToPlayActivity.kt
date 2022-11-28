@@ -29,8 +29,7 @@ class HowToPlayActivity : AppCompatActivity() {
         val backButton = findViewById<Button>(R.id.back)
 
         backButton.setOnClickListener(){
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            finish()
         }
     }
 }
