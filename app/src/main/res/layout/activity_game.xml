@@ -43,10 +43,11 @@
 
     <TextView
         android:id="@+id/questionTextView"
-        android:layout_width="141dp"
-        android:layout_height="15dp"
+        android:layout_width="297dp"
+        android:layout_height="41dp"
         android:layout_marginBottom="180dp"
         android:text="Which Card is bigger?"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
