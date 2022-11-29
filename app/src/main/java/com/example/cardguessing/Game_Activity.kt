@@ -1,5 +1,6 @@
 package com.example.cardguessing
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -56,7 +57,9 @@ class Game_Activity : AppCompatActivity() {
             score.text = "Score: $scoreCounter"
         }
         else{
-            finish()
+            val intent = Intent(this, Lose_Activity :: class.java)
+            intent.putExtra("KEY", scoreCounter)
+            startActivity(intent)
         }
     }
 
@@ -71,7 +74,9 @@ class Game_Activity : AppCompatActivity() {
             score.text = "Score: $scoreCounter"
         }
         else{
-            finish()
+            val intent = Intent(this, Lose_Activity :: class.java)
+            intent.putExtra("KEY", scoreCounter)
+            startActivity(intent)
         }
     }
 
