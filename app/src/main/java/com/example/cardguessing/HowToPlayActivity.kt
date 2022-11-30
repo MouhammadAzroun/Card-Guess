@@ -28,6 +28,7 @@ class HowToPlayActivity : AppCompatActivity() {
 
         val backButton = findViewById<Button>(R.id.back)
 
+        //backButton terminates the activity.
         backButton.setOnClickListener(){
             finish()
         }
