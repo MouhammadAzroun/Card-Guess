@@ -12,7 +12,11 @@ class Game_Activity : AppCompatActivity() {
     lateinit var card1 : ImageView
     lateinit var card2 : ImageView
     lateinit var score : TextView
+
+    //scoreCounter is to keep track of the score and its initial value is 0
     var scoreCounter = 0
+
+    // a list of ten images (Ace and up to ten of hearts)
     val listOfCards = intArrayOf(
         R.drawable.ace_of_hearts,
         R.drawable.two_of_hearts,
@@ -35,17 +39,25 @@ class Game_Activity : AppCompatActivity() {
         score = findViewById(R.id.scoreTextView)
         score.text = "Score: $scoreCounter"
 
+
         val leftButton = findViewById<Button>(R.id.leftButton)
+        //leftButton contains leftButtonCheck function
         leftButton.setOnClickListener{
             leftButtonCheck()
         }
 
         val rightButton = findViewById<Button>(R.id.rightButton)
+        //rightButton contains rightButtonCheck function
         rightButton.setOnClickListener{
             rightButtonCheck()
         }
     }
 
+    //this method is to chose two random cards from the list
+    // and check if the left card is bigger or smaller
+    //than the right card. if correct adds one to the
+    //scoreCounter, and if not it sends the new scoreCounter
+    // to Lose_Activity and starts Lose_Activity.
     fun leftButtonCheck(){
         var leftCard = Random.nextInt(listOfCards.size)
         var rightCard = Random.nextInt(listOfCards.size)
@@ -63,6 +75,11 @@ class Game_Activity : AppCompatActivity() {
         }
     }
 
+    //this method is to chose two random cards from the list
+    // and check if the right card is bigger or smaller
+    //than the left card. if correct adds one to the
+    //scoreCounter, and if not it sends the new scoreCounter
+    // to Lose_Activity and starts Lose_Activity.
     fun rightButtonCheck(){
         var leftCard = Random.nextInt(listOfCards.size)
         var rightCard = Random.nextInt(listOfCards.size)
