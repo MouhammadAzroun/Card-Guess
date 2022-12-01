@@ -24,6 +24,9 @@ class HowToPlayActivity : AppCompatActivity() {
                 "\n" +
                 "You lose the game if you\n" +
                 "guess wrong. \n" +
+                "In case of draw you won't \n" +
+                "earn a point and the \n" +
+                "game continues.\n" +
                 "Good luck!"
 
         val backButton = findViewById<Button>(R.id.back)
