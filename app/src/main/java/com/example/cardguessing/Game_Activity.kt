@@ -53,11 +53,11 @@ class Game_Activity : AppCompatActivity() {
         }
     }
 
-    //this method is to chose two random cards from the list
-    // and check if the left card is bigger or smaller
-    //than the right card. if correct adds one to the
-    //scoreCounter, and if not it sends the new scoreCounter
-    // to Lose_Activity and starts Lose_Activity.
+    /*this method is to choose two random cards from the list
+    and check if the left card is bigger or smaller
+    than the right card. if correct adds one to the
+    scoreCounter, and if not it sends the last scoreCounter
+    to Lose_Activity and starts Lose_Activity.*/
     fun leftButtonCheck(){
         var leftCard = Random.nextInt(listOfCards.size)
         var rightCard = Random.nextInt(listOfCards.size)
@@ -68,6 +68,9 @@ class Game_Activity : AppCompatActivity() {
             scoreCounter++
             score.text = "Score: $scoreCounter"
         }
+        else if(leftCard == rightCard){
+            score.text = "Score: $scoreCounter \n DRAW!"
+        }
         else{
             val intent = Intent(this, Lose_Activity :: class.java)
             intent.putExtra("KEY", scoreCounter)
@@ -75,11 +78,11 @@ class Game_Activity : AppCompatActivity() {
         }
     }
 
-    //this method is to chose two random cards from the list
-    // and check if the right card is bigger or smaller
-    //than the left card. if correct adds one to the
-    //scoreCounter, and if not it sends the new scoreCounter
-    // to Lose_Activity and starts Lose_Activity.
+    /*this method is to chose two random cards from the list
+      and check if the right card is bigger or smaller
+      than the left card. if correct adds one to the
+      scoreCounter, and if not it sends the last scoreCounter
+      to Lose_Activity and starts Lose_Activity.*/
     fun rightButtonCheck(){
         var leftCard = Random.nextInt(listOfCards.size)
         var rightCard = Random.nextInt(listOfCards.size)
@@ -89,6 +92,9 @@ class Game_Activity : AppCompatActivity() {
         if(leftCard<rightCard){
             scoreCounter++
             score.text = "Score: $scoreCounter"
+        }
+        else if(leftCard == rightCard){
+            score.text = "Score: $scoreCounter \n DRAW!"
         }
         else{
             val intent = Intent(this, Lose_Activity :: class.java)
